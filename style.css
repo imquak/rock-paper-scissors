@@ -3,6 +3,8 @@
 .body{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #title{
@@ -19,6 +21,24 @@
     font-size: 18px;
     animation: 1s ease-in-out 0s 1 slideInFromDown;
 }
+@keyframes slideInFromDown {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+@keyframes opacitySlide {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 
 @keyframes slideInFromDown {
     0% {
@@ -79,4 +99,25 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.robot{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 1s ease-in-out 0s 1 opacitySlide;
+}
+
+.robot-image{
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(70, 70, 70);
+    border-radius: 5px;
 }

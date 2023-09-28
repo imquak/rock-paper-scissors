@@ -10,7 +10,7 @@ let user_play = null;
 let can_play = true;
 console.log(robot_play)
 
-const button = document.getElementsByClassName('button');
+const buttons = document.getElementsByClassName('button');
 
 const rock = document.getElementById('rock');
 rock.addEventListener("click", function(){playMove('rock')});
