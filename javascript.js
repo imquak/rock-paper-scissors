@@ -4,10 +4,11 @@ function getRandomInt(max) {
 
 let options = ['rock','paper','scissors'];
 
-let result;
+let result = null;
 let robot_play = options[getRandomInt(3)];
-let user_play;
+let user_play = null;
 let can_play = true;
+console.log(robot_play)
 
 const button = document.getElementsByClassName('button');
 
@@ -22,9 +23,16 @@ scissors.addEventListener("click", function(){playMove('scissors')});
 
 function playMove(option){
     can_play = false;
-
     user_play = option;
     checkWin(robot_play,user_play);
+}
+
+function game(){
+    result = null;
+    robot_play = options[getRandomInt(3)];
+    user_play = null;
+    can_play = true;
+    console.log(robot_play)
 }
 
 function checkWin(robot,user){
@@ -41,6 +49,8 @@ function checkWin(robot,user){
                     result = 'robot';
                     break;
             }
+            console.log(result)
+            game();
             break;
         case 'paper':
             switch (user){
@@ -54,6 +64,8 @@ function checkWin(robot,user){
                     result = 'user';
                     break;
             }
+            console.log(result)
+            game();
             break;
 
         case 'scissors':
@@ -68,9 +80,10 @@ function checkWin(robot,user){
                     result = 'tie'
                     break;
             }
+            console.log(result)
+            game();
             break;
         
+        
     }
-    console.log(result);
 }
-console.log(robot_play)
