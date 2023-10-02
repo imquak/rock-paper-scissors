@@ -121,3 +121,16 @@ button[disabled]{
     border-color: rgb(70, 70, 70);
     border-radius: 5px;
 }
+
+.scorebox{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#result-text{
+    font-family: 'Mooli', sans-serif;
+    font-weight: 800;
+}

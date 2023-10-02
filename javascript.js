@@ -21,6 +21,8 @@ paper.addEventListener("click", function(){playMove('paper')});
 const scissors = document.getElementById('scissors');
 scissors.addEventListener("click", function(){playMove('scissors')});
 
+const score_text = document.getElementById('result-text');
+
 function playMove(option){
     can_play = false;
     user_play = option;
@@ -32,6 +34,7 @@ function game(){
     robot_play = options[getRandomInt(3)];
     user_play = null;
     can_play = true;
+    
     console.log(robot_play)
 }
 
@@ -49,8 +52,7 @@ function checkWin(robot,user){
                     result = 'robot';
                     break;
             }
-            console.log(result)
-            game();
+            
             break;
         case 'paper':
             switch (user){
@@ -64,8 +66,6 @@ function checkWin(robot,user){
                     result = 'user';
                     break;
             }
-            console.log(result)
-            game();
             break;
 
         case 'scissors':
@@ -80,10 +80,15 @@ function checkWin(robot,user){
                     result = 'tie'
                     break;
             }
-            console.log(result)
-            game();
             break;
         
         
     }
+    console.log(result)
+    score_text.textContent = result;
+    game();
+    
 }
+
+
+
